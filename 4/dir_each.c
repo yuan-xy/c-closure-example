@@ -6,7 +6,7 @@ void each(pDirentVisitor visitor, char *dir_name, void *context){
     DIR * dirp = opendir(dir_name);
     if(dirp==NULL) return;
     while ((dp = readdir(dirp)) != NULL){
-		(*visitor)(dp, context);
+		(*visitor)(dp, dir_name, context);
     }
     closedir(dirp);
 }

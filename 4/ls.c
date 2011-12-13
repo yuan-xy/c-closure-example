@@ -1,7 +1,7 @@
 #include <dir_each.h>
 #include <stdio.h>
 
-void print_name(struct dirent * dp, void *context){
+void print_name(struct dirent * dp, char *dir_name, void *context){
 	printf("%s\n",dp->d_name);
 }
 
