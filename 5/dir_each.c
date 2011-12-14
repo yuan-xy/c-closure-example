@@ -1,6 +1,11 @@
 #include "dir_each.h"
 #include <stdio.h>
 
+#ifdef _MSC_VER
+  #define va_copy(args2,args) args2=args
+#endif
+
+
 void each(pDirentVisitor visitor, char *dir_name, ...){
 	va_list args,args2;
 	struct dirent * dp;
